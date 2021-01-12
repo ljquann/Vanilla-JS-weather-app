@@ -2,7 +2,85 @@ body {
   border: 1px solid grey;
   border-radius: 20px;
   display: block;
+  font-family: "Montserrat", sans-serif;
   margin: 0 auto;
+  margin-top: 20px;
   max-width: 400px;
+  padding-top: 45px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+}
+h1 {
+  font-size: 44px;
+  padding: 10px;
+  padding-top: 45px;
+  padding-bottom: 5px;
+  text-align: center;
+}
+h2 {
+  display: block;
+  margin: 0 auto;
+}
+p {
+  text-align: center;
+}
+.btn {
+  font-size: 10px;
+  padding: 5px;
+}
+.cf-links {
+  font-size: 12px;
+  position: relative;
+  left: 215px;
+  top: -100px;
+}
+.coded-by {
+  font-size: 12px;
+  padding-top: 45px;
+}
+.current-temp {
+  font-size: 80px;
   padding: 25px;
+  text-align: center;
+}
+.date-time {
+  font-size: 12px;
+}
+.day-col {
+  text-align: left;
+  width: 110px;
+}
+.day-description {
+  display: block;
+  font-size: 16px;
+  margin: 0 auto;
+  text-align: center;
+}
+.forcast-grid {
+  padding: 5px;
+}
+.form-control {
+  text-align: right;
+  width: 360px;
+}
+.hi-col {
+  padding: 0;
+  text-align: right;
+  width: 35px;
+}
+.icon-col {
+  padding-right: 45px;
+  text-align: center;
+  width: 165px;
+}
+.lo-col {
+  padding-left: 5px;
+  text-align: left;
+  width: 35px;
+}
+.row {
+  max-width: 375px;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
