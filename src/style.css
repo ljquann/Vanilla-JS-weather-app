@@ -1,1 +1,8 @@
-
+body {
+  border: 1px solid grey;
+  border-radius: 20px;
+  display: block;
+  margin: 0 auto;
+  max-width: 400px;
+  padding: 25px;
+}
