@@ -129,3 +129,9 @@ p {
   color: #39375b;
   transition: all 200ms ease-in-out;
 }
+a:hover {
+  cursor: pointer;
+  background-color: rgba(57, 55, 91, 0.2);
+  color: #39375b;
+  transition: all 200ms ease-in-out;
+}
