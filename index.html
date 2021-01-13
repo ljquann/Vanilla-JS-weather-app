@@ -16,7 +16,7 @@
         <div class=sun-moon></div>
         <div class="input-group">
             <input type="text" class="form-control" placeholder="city name" id="cityform"
-                aria-label="Type a city name here">
+                aria-label="Type a city name here" autocomplete="off">
             <button class="btn btn-outline-secondary search-button" id="search" type="button">Search</button>
             <button class="btn btn-outline-secondary location-button" id="currentlocation" type="button" >My Location</button>
         </div>
@@ -34,9 +34,9 @@
                <strong>20</strong>
             </div>
             <div class="cf-links">
-                <a id="farenheitlink">°F</a>
+                <a href="" id="farenheitlink" class="active">°F</a>
                 |
-                <a id="celsiuslink">°C</a>
+                <a href="" id="celsiuslink" class="active">°C</a>
             </div>
         </h2>
         <div class="forcast-grid">
@@ -112,7 +112,7 @@
     </div>
     </div>
     <p class="coded-by">
-       This <a href="https://github.com/ljquann/Vanilla-JS-weather-app" target="_blank">open-source</a> page was coded by Laura Quann.
+       This <a href= "https://github.com/ljquann/Vanilla-JS-weather-app" target="_blank">open-source</a> page was coded by Laura Quann.
     </p>
         <script src="src/app.js">
         </script>

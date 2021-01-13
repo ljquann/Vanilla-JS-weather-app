@@ -4,7 +4,7 @@ html {
   margin: 25%;
 }
 body {
-  background-color: rgba(249, 212, 204, 0.5);
+  background-color: rgba(249, 212, 204, 0.7);
   border: 1px solid grey;
   border-radius: 20px;
   color: #39375b;
@@ -33,10 +33,16 @@ h2 {
 p {
   text-align: center;
 }
+a {
+  text-decoration: none;
+  text-transform: none;
+  color: #39375b;
+}
 .btn {
   background: transparent;
   border: 1px solid #39375b;
   border-radius: 5px;
+  box-shadow: 0px 1px 1px #39375b;
   color: #39375b;
   font-size: 10px;
   padding: 5px;
@@ -46,6 +52,11 @@ p {
   position: relative;
   left: 215px;
   top: -100px;
+}
+.cf-links .active {
+  cursor: default;
+  color: gray;
+  background-color: transparent;
 }
 .coded-by {
   font-size: 12px;
@@ -76,6 +87,7 @@ p {
   background: transparent;
   border: 1px solid #39375b;
   border-radius: 5px;
+  box-shadow: 0px 1px 1px #39375b;
   font-size: 14px;
   text-align: right;
   width: 360px;

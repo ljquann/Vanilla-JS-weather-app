@@ -36,7 +36,8 @@ function showWeather(response){
   console.log(response);
   cityPlaceholder.innerHTML= response.data.name;
   document.querySelector("#current-temp").innerHTML= `${Math.round(response.data.main.temp)}`;
-  document.querySelector("#current-description").innerHTML=`${response.data.weather[0].description}`
+  document.querySelector("#current-description").innerHTML=`${response.data.weather[0].description}`;
+  farenheitTemp= response.data.main.temp;
 }
 let cityPlaceholder = document.querySelector("h1");
 let apiKey=`2ab0b590fd9866ef804df5849d5ef74a`;
@@ -49,27 +50,25 @@ let cityInput = document.querySelector("#cityform");
 
 function metricUnit(event){
   event.preventDefault();
-  let apiKey=`2ab0b590fd9866ef804df5849d5ef74a`;
-  let metricUrl=`https://api.openweathermap.org/data/2.5/weather?q=${cityPlaceholder.innerHTML}&units=metric&appid=${apiKey}`;
-  axios.get(metricUrl).then(changeUnitToC) ; 
+  let metricConversion= (farenheitTemp-32) *5/9;
+  let tempElement=document.querySelector("#current-temp");
+  tempElement.innerHTML=Math.round(metricConversion);
+  changeMetricUnit.classList.add("active");
+  changeImpUnit.classList.remove("active");
 }
-function changeUnitToC(response){
-document.querySelector("#current-temp").innerHTML= `${Math.round(response.data.main.temp)}`;
+function impUnit(event){
+  event.preventDefault();
+  let tempElement=document.querySelector("#current-temp");
+  tempElement.innerHTML=Math.round(farenheitTemp);
+  changeImpUnit.classList.add("active");
+  changeMetricUnit.classList.remove("active");
 }
 let changeMetricUnit= document.querySelector("#celsiuslink");
 changeMetricUnit.addEventListener("click", metricUnit);
-
-function impUnit(event){
-  event.preventDefault();
-  let apiKey=`2ab0b590fd9866ef804df5849d5ef74a`;
-  let impUrl=`https://api.openweathermap.org/data/2.5/weather?q=${cityPlaceholder.innerHTML}&units=imperial&appid=${apiKey}`;
-  axios.get(impUrl).then(changeUnitToF) ; 
-}
-function changeUnitToF(response){
-  document.querySelector("#current-temp").innerHTML= `${Math.round(response.data.main.temp)}`;
-}
+let farenheitTemp=null;
 let changeImpUnit= document.querySelector("#farenheitlink");
-changeImpUnit.addEventListener("click", impUnit);
+changeImpUnit.addEventListener("click",  impUnit);
+changeMetricUnit.classList.remove("active");
 
 function changeToGeolocation(position){
   console.log (position);
@@ -79,7 +78,6 @@ function changeToGeolocation(position){
   let geolocationUrl= `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=${apiKey}`;
   axios.get(geolocationUrl).then(showWeather);   
 }
-
 function geoClick(event){
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(changeToGeolocation);
