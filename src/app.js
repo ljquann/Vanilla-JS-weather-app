@@ -1,4 +1,5 @@
 let now=new Date();
+
 function currentDay(date){
 let days=["Sunday", "Monday", "Tuesday","Wednesday", "Thursday", "Friday", "Saturday"];
 let day=days[now.getDay()];
