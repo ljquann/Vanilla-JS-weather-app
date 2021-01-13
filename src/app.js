@@ -38,6 +38,8 @@ function showWeather(response){
   document.querySelector("#current-temp").innerHTML= `${Math.round(response.data.main.temp)}`;
   document.querySelector("#current-description").innerHTML=`${response.data.weather[0].description}`;
   farenheitTemp= response.data.main.temp;
+  changeImpUnit.classList.add("active");
+  changeMetricUnit.classList.remove("active");
 }
 let cityPlaceholder = document.querySelector("h1");
 let apiKey=`2ab0b590fd9866ef804df5849d5ef74a`;
@@ -45,7 +47,7 @@ let apiUrl=`https://api.openweathermap.org/data/2.5/weather?q=${cityPlaceholder.
 axios.get(apiUrl).then(showWeather);
 
 let citySubmit = document.querySelector("#search");
-citySubmit = addEventListener("click", changeCity);
+citySubmit = addEventListener("click" || "keyenter", changeCity);
 let cityInput = document.querySelector("#cityform");
 
 function metricUnit(event){
@@ -68,7 +70,6 @@ changeMetricUnit.addEventListener("click", metricUnit);
 let farenheitTemp=null;
 let changeImpUnit= document.querySelector("#farenheitlink");
 changeImpUnit.addEventListener("click",  impUnit);
-changeMetricUnit.classList.remove("active");
 
 function changeToGeolocation(position){
   console.log (position);
