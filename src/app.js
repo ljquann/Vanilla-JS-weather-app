@@ -31,8 +31,9 @@ function changeCity(event) {
   let apiKey=`2ab0b590fd9866ef804df5849d5ef74a`;
   let apiUrl=`https://api.openweathermap.org/data/2.5/weather?q=${cityPlaceholder}&units=imperial&appid=${apiKey}`;
   axios.get(apiUrl).then(showWeather); 
+  let forecastUrl=`https://api.openweathermap.org/data/2.5/forecast?q=${cityPlaceholder}&units=imperial&appid=${apiKey}`;
+  axios.get(forecastUrl).then(showForecast);
   changeMetricUnit.classList.remove("active");
-  showForecast();
 }
 function showWeather(response){
   console.log(response);
@@ -68,7 +69,7 @@ gotDayFive=days[dayFive.getDay()];
                 ${gotDayOne}
             </div>
             <div class="col-3 icon-col">
-                ☀️
+                <img src="http://openweathermap.org/img/wn/${response.data.list[4].weather[0].icon}@2x.png">
             </div>
             <div class="col-3 hi-col">
                 ${Math.round(response.data.list[4].main.temp)}°
@@ -79,7 +80,7 @@ gotDayFive=days[dayFive.getDay()];
                     ${gotDayTwo}
             </div>
             <div class="col-3 icon-col">
-                    ☀️
+                    <img src="http://openweathermap.org/img/wn/${response.data.list[12].weather[0].icon}@2x.png">
             </div>
             <div class="col-3 hi-col">
                     ${Math.round(response.data.list[12].main.temp)}°
@@ -90,7 +91,7 @@ gotDayFive=days[dayFive.getDay()];
              ${gotDayThree}
           </div>
         <div class="col-3 icon-col">
-             ☀️
+             <img src="http://openweathermap.org/img/wn/${response.data.list[20].weather[0].icon}@2x.png">
          </div>
          <div class="col-3 hi-col">
               ${Math.round(response.data.list[20].main.temp)}° 
@@ -101,7 +102,7 @@ gotDayFive=days[dayFive.getDay()];
             ${gotDayFour}
         </div>
         <div class="col-3 icon-col">
-            ☀️
+            <img src="http://openweathermap.org/img/wn/${response.data.list[28].weather[0].icon}@2x.png">
         </div>
         <div class="col-3 hi-col">
             ${Math.round(response.data.list[28].main.temp)}°
@@ -112,7 +113,7 @@ gotDayFive=days[dayFive.getDay()];
             ${gotDayFive}
         </div>
         <div class="col-3 icon-col">
-            ☀️
+            <img src="http://openweathermap.org/img/wn/${response.data.list[36].weather[0].icon}@2x.png">
         </div>
         <div class="col-3 hi-col">
             ${Math.round(response.data.list[36].main.temp)}°
@@ -120,7 +121,6 @@ gotDayFive=days[dayFive.getDay()];
     </div>
     </div>`;
 }
-
 let cityPlaceholder = document.querySelector("h1");
 let apiKey=`2ab0b590fd9866ef804df5849d5ef74a`;
 let apiUrl=`https://api.openweathermap.org/data/2.5/weather?q=${cityPlaceholder.innerHTML}&units=imperial&appid=${apiKey}`;
@@ -130,7 +130,7 @@ let forecastUrl=`https://api.openweathermap.org/data/2.5/forecast?q=${cityPlaceh
 axios.get(forecastUrl).then(showForecast);
 
 let citySubmit = document.querySelector("#search");
-citySubmit = addEventListener("click", changeCity);
+citySubmit = addEventListener("submit", changeCity);
 let cityInput = document.querySelector("#cityform");
 
 function metricUnit(event){

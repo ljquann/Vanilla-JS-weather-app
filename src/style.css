@@ -12,9 +12,9 @@ body {
   max-width: 400px;
   min-width: 400px;
   overflow: hidden;
-  padding-top: 45px;
+  padding-top: 30px;
   padding-right: 20px;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
   padding-left: 20px;
   position: fixed;
   top: 20px;
@@ -38,6 +38,10 @@ a {
   text-transform: none;
   color: #39375b;
 }
+img {
+  width: 40px;
+  height: 38px;
+}
 .btn {
   background: transparent;
   border: 1px solid #39375b;
@@ -60,17 +64,18 @@ a {
 }
 .coded-by {
   font-size: 12px;
-  padding-top: 30px;
+  padding-top: 20px;
 }
 .current-temp {
   font-size: 80px;
-  padding: 25px;
+  padding: 20px;
   text-align: center;
 }
 .date-time {
   font-size: 12px;
 }
 .day-col {
+  padding-left: 30px;
   text-align: left;
   width: 125px;
 }
@@ -93,7 +98,7 @@ a {
   width: 360px;
 }
 .hi-col {
-  padding: 0;
+  padding-right: 30px;
   text-align: right;
   width: 50px;
 }
@@ -104,8 +109,8 @@ a {
 }
 .row {
   max-width: 375px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-top: 2px;
+  padding-bottom: 2px;
 }
 .sun-moon {
   animation-name: sunset;
