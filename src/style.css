@@ -72,7 +72,7 @@ a {
 }
 .day-col {
   text-align: left;
-  width: 110px;
+  width: 125px;
 }
 .day-description {
   display: block;
@@ -95,17 +95,12 @@ a {
 .hi-col {
   padding: 0;
   text-align: right;
-  width: 35px;
+  width: 50px;
 }
 .icon-col {
-  padding-right: 45px;
+  padding-left: 40px;
   text-align: center;
   width: 165px;
-}
-.lo-col {
-  padding-left: 5px;
-  text-align: left;
-  width: 35px;
 }
 .row {
   max-width: 375px;

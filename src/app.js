@@ -30,7 +30,9 @@ function changeCity(event) {
   let cityPlaceholder = `${cityInput.value}`;
   let apiKey=`2ab0b590fd9866ef804df5849d5ef74a`;
   let apiUrl=`https://api.openweathermap.org/data/2.5/weather?q=${cityPlaceholder}&units=imperial&appid=${apiKey}`;
-  axios.get(apiUrl).then(showWeather) ; 
+  axios.get(apiUrl).then(showWeather); 
+  changeMetricUnit.classList.remove("active");
+  showForecast();
 }
 function showWeather(response){
   console.log(response);
@@ -38,10 +40,77 @@ function showWeather(response){
   document.querySelector("#current-temp").innerHTML= `${Math.round(response.data.main.temp)}`;
   document.querySelector("#current-description").innerHTML=`${response.data.weather[0].description}`;
 }
+function showForecast(response){
+  console.log(response);
+  let days=["Sunday", "Monday", "Tuesday","Wednesday", "Thursday", "Friday", "Saturday"];
+  let day=days[now.getDay()];
+  let forecastElement=document.querySelector("#forecast");
+  forecastElement.innerHTML= 
+  `<div class="row day-one">
+            <div class="col-3 day-col">
+                ${day}
+            </div>
+            <div class="col-3 icon-col">
+                ☀️
+            </div>
+            <div class="col-3 hi-col">
+                ${Math.round(response.data.list[4].main.temp)}°
+            </div>
+        </div>
+        <div class="row day-two">
+            <div class="col-3 day-col">
+                    ${day}
+            </div>
+            <div class="col-3 icon-col">
+                    ☀️
+            </div>
+            <div class="col-3 hi-col">
+                    ${Math.round(response.data.list[12].main.temp)}°
+             </div>
+     </div>
+    <div class="row day-three">
+        <div class="col-3 day-col">
+             ${day}
+          </div>
+        <div class="col-3 icon-col">
+             ☀️
+         </div>
+         <div class="col-3 hi-col">
+              ${Math.round(response.data.list[20].main.temp)}° 
+        </div>
+    </div>
+    <div class="row day-four">
+        <div class="col-3 day-col">
+            ${day}
+        </div>
+        <div class="col-3 icon-col">
+            ☀️
+        </div>
+        <div class="col-3 hi-col">
+            ${Math.round(response.data.list[28].main.temp)}°
+        </div>
+    </div>
+    <div class="row day-five">
+        <div class="col-3 day-col">
+            ${day}
+        </div>
+        <div class="col-3 icon-col">
+            ☀️
+        </div>
+        <div class="col-3 hi-col">
+            ${Math.round(response.data.list[36].main.temp)}°
+        </div>
+    </div>
+    </div>`;
+}
+
 let cityPlaceholder = document.querySelector("h1");
 let apiKey=`2ab0b590fd9866ef804df5849d5ef74a`;
 let apiUrl=`https://api.openweathermap.org/data/2.5/weather?q=${cityPlaceholder.innerHTML}&units=imperial&appid=${apiKey}`;
 axios.get(apiUrl).then(showWeather);
+
+let forecastUrl=`https://api.openweathermap.org/data/2.5/forecast?q=${cityPlaceholder.innerHTML}&units=imperial&appid=${apiKey}`;
+axios.get(forecastUrl).then(showForecast);
 
 let citySubmit = document.querySelector("#search");
 citySubmit = addEventListener("click", changeCity);
@@ -52,6 +121,8 @@ event.preventDefault();
 let apiKey=`2ab0b590fd9866ef804df5849d5ef74a`;
 let apiUrl=`https://api.openweathermap.org/data/2.5/weather?q=${cityPlaceholder.innerHTML}&units=metric&appid=${apiKey}`;
 axios.get(apiUrl).then(showWeather);
+let forecastUrl=`https://api.openweathermap.org/data/2.5/forecast?q=${cityPlaceholder.innerHTML}&units=metric&appid=${apiKey}`;
+axios.get(forecastUrl).then(showForecast);
 changeMetricUnit.classList.add("active");
 changeImpUnit.classList.remove("active");
 }
@@ -60,6 +131,8 @@ event.preventDefault();
 let apiKey=`2ab0b590fd9866ef804df5849d5ef74a`;
 let apiUrl=`https://api.openweathermap.org/data/2.5/weather?q=${cityPlaceholder.innerHTML}&units=imperial&appid=${apiKey}`;
 axios.get(apiUrl).then(showWeather);
+let forecastUrl=`https://api.openweathermap.org/data/2.5/forecast?q=${cityPlaceholder.innerHTML}&units=imperial&appid=${apiKey}`;
+axios.get(forecastUrl).then(showForecast);
 changeImpUnit.classList.add("active");
 changeMetricUnit.classList.remove("active");
 }
@@ -74,9 +147,12 @@ function changeToGeolocation(position){
   let longitude= position.coords.longitude;
   let apiKey="2ab0b590fd9866ef804df5849d5ef74a";
   let geolocationUrl= `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=${apiKey}`;
+  let forecastUrl=`https://api.openweathermap.org/data/2.5/forecast?q=${cityPlaceholder.innerHTML}&units=imperial&appid=${apiKey}`;
+
   changeMetricUnit.classList.remove("active");
   changeImpUnit.classList.add("active");
   axios.get(geolocationUrl).then(showWeather);   
+  axios.get(forecastUrl).then(showForecast);
 }
 function geoClick(event){
   event.preventDefault();
