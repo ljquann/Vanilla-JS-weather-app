@@ -68,7 +68,7 @@ img {
 }
 .current-temp {
   font-size: 80px;
-  padding: 20px;
+  padding: 12px;
   text-align: center;
 }
 .date-time {
@@ -114,7 +114,7 @@ img {
 }
 .sun-moon {
   animation-name: sunset;
-  animation-duration: 12s;
+  animation-duration: 90s;
   animation-iteration-count: infinite;
   background-color: rgba(253, 251, 99, 0.3);
   border: 125px solid #fdffbc;

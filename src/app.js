@@ -1,4 +1,16 @@
 let now=new Date();
+let ft = now.toLocaleString("en-US", {
+        hour: "numeric",
+        minute: "numeric",
+        hour12: true
+});
+let hour=now.getHours();
+let minute=now.getMinutes();
+
+if (hour<=6||  hour>=18){
+    document.write(`<body style="background:rgba(119,109,138, 0.6);">`);
+    document.write(`<div class=sun-moon style="border: 125px solid #cfd3ce;">`)
+  }
 
 function currentDay(date){
 let days=["Sunday", "Monday", "Tuesday","Wednesday", "Thursday", "Friday", "Saturday"];
@@ -6,24 +18,18 @@ let day=days[now.getDay()];
   return `${day}`;
 }
 function dateAndTime(date){
- let hour=now.getHours();
-  if (hour <10){
-    hour=`0${hour}`;
-  }
-let minute=now.getMinutes();
-  if (minute<10){
-    minute=`0${minute}`;
-  }
   let months=["January", "February", "March","April", "May", "June", "July", "August", "Spetember", "October", "November", "December"];
   let month=months[now.getMonth()];
   let dayOfMonth=now.getDate();
   let year=now.getFullYear();
-  return `${month} ${dayOfMonth}, ${year } ${hour}:${minute}`;
+  return `${month} ${dayOfMonth}, ${year } <br /> ${ft}`;
 }
+
 let dayOfWeek=document.querySelector("#current-day");
 dayOfWeek.innerHTML=currentDay(now);
 let dayAndTime=document.querySelector("#date-time");
 dayAndTime.innerHTML=dateAndTime(now);
+
 
 function changeCity(event) {
   event.preventDefault();
@@ -164,8 +170,7 @@ function changeToGeolocation(position){
   let longitude= position.coords.longitude;
   let apiKey="2ab0b590fd9866ef804df5849d5ef74a";
   let geolocationUrl= `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=${apiKey}`;
-  let forecastUrl=`https://api.openweathermap.org/data/2.5/forecast?q=${cityPlaceholder.innerHTML}&units=imperial&appid=${apiKey}`;
-
+  let forecastUrl=`https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=imperial&appid=${apiKey}`;
   changeMetricUnit.classList.remove("active");
   changeImpUnit.classList.add("active");
   axios.get(geolocationUrl).then(showWeather);   
