@@ -37,8 +37,10 @@ function changeCity(event) {
 function showWeather(response){
   console.log(response);
   cityPlaceholder.innerHTML= response.data.name;
-  document.querySelector("#current-temp").innerHTML= `${Math.round(response.data.main.temp)}`;
-  document.querySelector("#current-description").innerHTML=`${response.data.weather[0].description}`;
+ let currentTemp=document.querySelector("#current-temp");
+  currentTemp.innerHTML= `${Math.round(response.data.main.temp)}`;
+ let currentDescription= document.querySelector("#current-description");
+currentDescription.innerHTML=`${response.data.weather[0].description}`;
 }
 function showForecast(response){
   console.log(response);
