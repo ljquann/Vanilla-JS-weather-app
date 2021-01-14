@@ -45,12 +45,27 @@ currentDescription.innerHTML=`${response.data.weather[0].description}`;
 function showForecast(response){
   console.log(response);
   let days=["Sunday", "Monday", "Tuesday","Wednesday", "Thursday", "Friday", "Saturday"];
-  let day=days[now.getDay()];
+  day=days[now.getDay()];
+ let dayOne=new Date(response.data.list[4].dt_txt);
+gotDayOne=days[dayOne.getDay()];
+
+ let dayTwo=new Date(response.data.list[12].dt_txt);
+gotDayTwo=days[dayTwo.getDay()];
+
+ let dayThree=new Date(response.data.list[20].dt_txt);
+gotDayThree=days[dayThree.getDay()];
+
+ let dayFour=new Date(response.data.list[28].dt_txt);
+gotDayFour=days[dayFour.getDay()];
+
+ let dayFive=new Date(response.data.list[36].dt_txt);
+gotDayFive=days[dayFive.getDay()];
+
   let forecastElement=document.querySelector("#forecast");
   forecastElement.innerHTML= 
   `<div class="row day-one">
             <div class="col-3 day-col">
-                ${day}
+                ${gotDayOne}
             </div>
             <div class="col-3 icon-col">
                 ☀️
@@ -61,7 +76,7 @@ function showForecast(response){
         </div>
         <div class="row day-two">
             <div class="col-3 day-col">
-                    ${day}
+                    ${gotDayTwo}
             </div>
             <div class="col-3 icon-col">
                     ☀️
@@ -72,7 +87,7 @@ function showForecast(response){
      </div>
     <div class="row day-three">
         <div class="col-3 day-col">
-             ${day}
+             ${gotDayThree}
           </div>
         <div class="col-3 icon-col">
              ☀️
@@ -83,7 +98,7 @@ function showForecast(response){
     </div>
     <div class="row day-four">
         <div class="col-3 day-col">
-            ${day}
+            ${gotDayFour}
         </div>
         <div class="col-3 icon-col">
             ☀️
@@ -94,7 +109,7 @@ function showForecast(response){
     </div>
     <div class="row day-five">
         <div class="col-3 day-col">
-            ${day}
+            ${gotDayFive}
         </div>
         <div class="col-3 icon-col">
             ☀️
