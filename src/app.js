@@ -50,10 +50,12 @@ function showWeather(response){
 currentDescription.innerHTML=`${response.data.weather[0].description}`;
 }
 function showForecast(response){
-  console.log(response);
-  var days=["Sunday", "Monday", "Tuesday","Wednesday", "Thursday", "Friday", "Saturday"];
-  day=days[now.getDay()];
- var dayOne=new Date(response.data.list[4].dt_txt);
+console.log(response);
+var days=["Sunday", "Monday", "Tuesday","Wednesday", "Thursday", "Friday", "Saturday"];
+var day=days[now.getDay()];
+console.log(day);
+
+var dayOne=new Date(response.data.list[4].dt_txt);
 gotDayOne=days[dayOne.getDay()];
 
  var dayTwo=new Date(response.data.list[12].dt_txt);
