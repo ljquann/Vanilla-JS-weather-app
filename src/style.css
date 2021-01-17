@@ -1,9 +1,7 @@
 html {
   background-color: rgba(251, 220, 183, 0.1);
-  height: 750px;
   margin: 15%;
   overflow: hidden auto;
-  width: 900px;
 }
 body {
   background-color: rgba(249, 212, 204, 0.7);
