@@ -13,8 +13,8 @@ if (hour<=6||  hour>=18){
   }
 
 function currentDay(date){
-var days=["Sunday", "Monday", "Tuesday","Wednesday", "Thursday", "Friday", "Saturday"];
-var day=days[now.getDay()];
+ var days=["Sunday", "Monday", "Tuesday","Wednesday", "Thursday", "Friday", "Saturday"];
+ var day=days[now.getDay()];
   return `${day}`;
 }
 function dateAndTime(date){
@@ -51,14 +51,14 @@ currentDescription.innerHTML=`${response.data.weather[0].description}`;
 }
 function showForecast(response){
 console.log(response);
-var days=["Sunday", "Monday", "Tuesday","Wednesday", "Thursday", "Friday", "Saturday"];
+var days=[`Sunday`, `Monday`, `Tuesday`,`Wednesday`, `Thursday`, `Friday`, `Saturday`];
 var day=days[now.getDay()];
 console.log(day);
 
 var dayOne=new Date(response.data.list[4].dt_txt);
 var gotDayOne=days[dayOne.getDay()];
 
- var dayTwo=new Date(response.data.list[12].dt_txt);
+var dayTwo=new Date(response.data.list[12].dt_txt);
 var gotDayTwo=days[dayTwo.getDay()];
 
  var dayThree=new Date(response.data.list[20].dt_txt);
@@ -170,7 +170,7 @@ function changeToGeolocation(position){
   console.log (position);
   var latitude= position.coords.latitude;
   var longitude= position.coords.longitude;
-  var apiKey="2ab0b590fd9866ef804df5849d5ef74a";
+  var apiKey=`2ab0b590fd9866ef804df5849d5ef74a`;
   var geolocationUrl= `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=${apiKey}`;
   var forecastUrl=`https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=imperial&appid=${apiKey}`;
   changeMetricUnit.classList.remove("active");
