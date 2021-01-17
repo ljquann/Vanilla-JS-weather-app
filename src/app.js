@@ -56,19 +56,19 @@ var day=days[now.getDay()];
 console.log(day);
 
 var dayOne=new Date(response.data.list[4].dt_txt);
-gotDayOne=days[dayOne.getDay()];
+var gotDayOne=days[dayOne.getDay()];
 
  var dayTwo=new Date(response.data.list[12].dt_txt);
-gotDayTwo=days[dayTwo.getDay()];
+var gotDayTwo=days[dayTwo.getDay()];
 
  var dayThree=new Date(response.data.list[20].dt_txt);
-gotDayThree=days[dayThree.getDay()];
+var gotDayThree=days[dayThree.getDay()];
 
  var dayFour=new Date(response.data.list[28].dt_txt);
-gotDayFour=days[dayFour.getDay()];
+var gotDayFour=days[dayFour.getDay()];
 
  var dayFive=new Date(response.data.list[36].dt_txt);
-gotDayFive=days[dayFive.getDay()];
+ var gotDayFive=days[dayFive.getDay()];
 
   var forecastElement=document.querySelector("#forecast");
   forecastElement.innerHTML= 
