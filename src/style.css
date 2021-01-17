@@ -1,7 +1,9 @@
 html {
   background-color: rgba(251, 220, 183, 0.1);
-  overflow: hidden;
-  margin: 25%;
+  height: 750px;
+  width: 900px;
+  overflow: hidden auto;
+  margin: 15%;
 }
 body {
   background-color: rgba(249, 212, 204, 0.7);
@@ -9,12 +11,13 @@ body {
   border-radius: 20px;
   color: #39375b;
   font-family: "Montserrat", sans-serif;
+  height: 660px;
   max-width: 400px;
   min-width: 400px;
-  overflow: hidden;
+  overflow: hidden auto;
   padding-top: 30px;
   padding-right: 20px;
-  padding-bottom: 5px;
+  padding-bottom: 20px;
   padding-left: 20px;
   position: fixed;
   top: 20px;
