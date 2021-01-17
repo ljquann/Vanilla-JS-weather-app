@@ -52,29 +52,17 @@ currentDescription.innerHTML=`${response.data.weather[0].description}`;
 function showForecast(response){
 console.log(response);
 var days=[`Sunday`, `Monday`, `Tuesday`,`Wednesday`, `Thursday`, `Friday`, `Saturday`];
-var day=days[now.getDay()];
-console.log(day);
-
 var dayOne=new Date(response.data.list[4].dt_txt);
-var gotDayOne=days[dayOne.getDay()];
-
 var dayTwo=new Date(response.data.list[12].dt_txt);
-var gotDayTwo=days[dayTwo.getDay()];
-
  var dayThree=new Date(response.data.list[20].dt_txt);
-var gotDayThree=days[dayThree.getDay()];
-
  var dayFour=new Date(response.data.list[28].dt_txt);
-var gotDayFour=days[dayFour.getDay()];
-
  var dayFive=new Date(response.data.list[36].dt_txt);
- var gotDayFive=days[dayFive.getDay()];
-
-  var forecastElement=document.querySelector("#forecast");
+ 
+var forecastElement=document.querySelector("#forecast");
   forecastElement.innerHTML= 
   `<div class="row day-one">
             <div class="col-3 day-col">
-                ${gotDayOne}
+                ${days[dayOne.getDay()]}
             </div>
             <div class="col-3 icon-col">
                 <img src="https://openweathermap.org/img/wn/${response.data.list[4].weather[0].icon}@2x.png">
@@ -85,7 +73,7 @@ var gotDayFour=days[dayFour.getDay()];
         </div>
         <div class="row day-two">
             <div class="col-3 day-col">
-                    ${gotDayTwo}
+                    ${days[dayTwo.getDay()]}
             </div>
             <div class="col-3 icon-col">
                     <img src="https://openweathermap.org/img/wn/${response.data.list[12].weather[0].icon}@2x.png">
@@ -96,7 +84,7 @@ var gotDayFour=days[dayFour.getDay()];
      </div>
     <div class="row day-three">
         <div class="col-3 day-col">
-             ${gotDayThree}
+             ${days[dayThree.getDay()]}
           </div>
         <div class="col-3 icon-col">
              <img src="https://openweathermap.org/img/wn/${response.data.list[20].weather[0].icon}@2x.png">
@@ -107,7 +95,7 @@ var gotDayFour=days[dayFour.getDay()];
     </div>
     <div class="row day-four">
         <div class="col-3 day-col">
-            ${gotDayFour}
+            ${days[dayFour.getDay()]}
         </div>
         <div class="col-3 icon-col">
             <img src="https://openweathermap.org/img/wn/${response.data.list[28].weather[0].icon}@2x.png">
@@ -118,7 +106,7 @@ var gotDayFour=days[dayFour.getDay()];
     </div>
     <div class="row day-five">
         <div class="col-3 day-col">
-            ${gotDayFive}
+            ${days[dayFive.getDay()]}
         </div>
         <div class="col-3 icon-col">
             <img src="https://openweathermap.org/img/wn/${response.data.list[36].weather[0].icon}@2x.png">
