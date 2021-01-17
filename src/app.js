@@ -35,9 +35,9 @@ function changeCity(event) {
   event.preventDefault();
   var cityPlaceholder = `${cityInput.value}`;
   var apiKey=`2ab0b590fd9866ef804df5849d5ef74a`;
-  var apiUrl=`https://api.openweathermap.org/data/2.5/weather?q=${cityPlaceholder}&units=imperial&appid=${apiKey}`;
+  var apiUrl=`http://api.openweathermap.org/data/2.5/weather?q=${cityPlaceholder}&units=imperial&appid=${apiKey}`;
   axios.get(apiUrl).then(showWeather); 
-  var forecastUrl=`https://api.openweathermap.org/data/2.5/forecast?q=${cityPlaceholder}&units=imperial&appid=${apiKey}`;
+  var forecastUrl=`http://api.openweathermap.org/data/2.5/forecast?q=${cityPlaceholder}&units=imperial&appid=${apiKey}`;
   axios.get(forecastUrl).then(showForecast);
   changeMetricUnit.classList.remove("active");
 }
@@ -129,10 +129,10 @@ gotDayFive=days[dayFive.getDay()];
 }
 var cityPlaceholder = document.querySelector("h1");
 var apiKey=`2ab0b590fd9866ef804df5849d5ef74a`;
-var apiUrl=`https://api.openweathermap.org/data/2.5/weather?q=${cityPlaceholder.innerHTML}&units=imperial&appid=${apiKey}`;
+var apiUrl=`http://api.openweathermap.org/data/2.5/weather?q=${cityPlaceholder.innerHTML}&units=imperial&appid=${apiKey}`;
 axios.get(apiUrl).then(showWeather);
 
-var forecastUrl=`https://api.openweathermap.org/data/2.5/forecast?q=${cityPlaceholder.innerHTML}&units=imperial&appid=${apiKey}`;
+var forecastUrl=`http://api.openweathermap.org/data/2.5/forecast?q=${cityPlaceholder.innerHTML}&units=imperial&appid=${apiKey}`;
 axios.get(forecastUrl).then(showForecast);
 
 var citySubmit = document.querySelector("#search");
@@ -142,9 +142,9 @@ var cityInput = document.querySelector("#cityform");
 function metricUnit(event){
 event.preventDefault();
 var apiKey=`2ab0b590fd9866ef804df5849d5ef74a`;
-var apiUrl=`https://api.openweathermap.org/data/2.5/weather?q=${cityPlaceholder.innerHTML}&units=metric&appid=${apiKey}`;
+var apiUrl=`http://api.openweathermap.org/data/2.5/weather?q=${cityPlaceholder.innerHTML}&units=metric&appid=${apiKey}`;
 axios.get(apiUrl).then(showWeather);
-var forecastUrl=`https://api.openweathermap.org/data/2.5/forecast?q=${cityPlaceholder.innerHTML}&units=metric&appid=${apiKey}`;
+var forecastUrl=`http://api.openweathermap.org/data/2.5/forecast?q=${cityPlaceholder.innerHTML}&units=metric&appid=${apiKey}`;
 axios.get(forecastUrl).then(showForecast);
 changeMetricUnit.classList.add("active");
 changeImpUnit.classList.remove("active");
@@ -152,9 +152,9 @@ changeImpUnit.classList.remove("active");
 function impUnit(event){
 event.preventDefault();
 var apiKey=`2ab0b590fd9866ef804df5849d5ef74a`;
-var apiUrl=`https://api.openweathermap.org/data/2.5/weather?q=${cityPlaceholder.innerHTML}&units=imperial&appid=${apiKey}`;
+var apiUrl=`http://api.openweathermap.org/data/2.5/weather?q=${cityPlaceholder.innerHTML}&units=imperial&appid=${apiKey}`;
 axios.get(apiUrl).then(showWeather);
-var forecastUrl=`https://api.openweathermap.org/data/2.5/forecast?q=${cityPlaceholder.innerHTML}&units=imperial&appid=${apiKey}`;
+var forecastUrl=`http://api.openweathermap.org/data/2.5/forecast?q=${cityPlaceholder.innerHTML}&units=imperial&appid=${apiKey}`;
 axios.get(forecastUrl).then(showForecast);
 changeImpUnit.classList.add("active");
 changeMetricUnit.classList.remove("active");
@@ -169,8 +169,8 @@ function changeToGeolocation(position){
   var latitude= position.coords.latitude;
   var longitude= position.coords.longitude;
   var apiKey="2ab0b590fd9866ef804df5849d5ef74a";
-  var geolocationUrl= `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=${apiKey}`;
-  var forecastUrl=`https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=imperial&appid=${apiKey}`;
+  var geolocationUrl= `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=${apiKey}`;
+  var forecastUrl=`http://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=imperial&appid=${apiKey}`;
   changeMetricUnit.classList.remove("active");
   changeImpUnit.classList.add("active");
   axios.get(geolocationUrl).then(showWeather);   
