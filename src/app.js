@@ -54,9 +54,9 @@ console.log(response);
 var days=[`Sunday`, `Monday`, `Tuesday`,`Wednesday`, `Thursday`, `Friday`, `Saturday`];
 var dayOne=new Date(response.data.list[4].dt_txt);
 var dayTwo=new Date(response.data.list[12].dt_txt);
- var dayThree=new Date(response.data.list[20].dt_txt);
- var dayFour=new Date(response.data.list[28].dt_txt);
- var dayFive=new Date(response.data.list[36].dt_txt);
+var dayThree=new Date(response.data.list[20].dt_txt);
+var dayFour=new Date(response.data.list[28].dt_txt);
+var dayFive=new Date(response.data.list[36].dt_txt);
  
 var forecastElement=document.querySelector("#forecast");
   forecastElement.innerHTML= 
