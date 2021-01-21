@@ -150,21 +150,24 @@ a:hover {
 @media (max-width: 500px) {
   html {
     background-color: none;
-    margin: 15%;
+    margin: 5%;
   }
   body {
-    width: 90vw;
-    height: 90vh;
+    width: 85vw;
+    height: 85vh;
     margin: 0;
   }
   .day-col {
     width: 25vw;
+    text-align: left;
   }
   .icon-col {
     width: 25vw;
+    text-align: center;
   }
   .hi-col {
     width: 25vw;
+    text-align: right;
   }
 }
 @media (min-width: 500px) {
