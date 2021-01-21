@@ -146,6 +146,7 @@ a:hover {
 @media (max-width: 500px) {
   html {
     margin: 1%;
+    overflow: scroll;
   }
   body {
     width: 100vw;
