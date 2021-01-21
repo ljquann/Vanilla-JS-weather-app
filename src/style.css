@@ -150,7 +150,7 @@ a:hover {
 @media (max-width: 500px) {
   html {
     background-color: none;
-    margin: 0;
+    margin: 15%;
   }
   body {
     width: 90vw;
