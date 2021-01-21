@@ -9,9 +9,8 @@ body {
   border-radius: 20px;
   color: #39375b;
   font-family: "Montserrat", sans-serif;
-  height: 675px;
-  max-width: 400px;
-  min-width: 400px;
+  height: 650px;
+  width: 400px;
   overflow: hidden;
   padding: 30px 20px 20px 20px;
   position: fixed;
@@ -148,7 +147,7 @@ a:hover {
   color: #39375b;
   transition: all 200ms ease-in-out;
 }
-@media screen and (max-width: 400px) {
+@media all and (max-width: 500px) {
   html {
     margin: 0;
   }
