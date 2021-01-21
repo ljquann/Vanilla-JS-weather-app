@@ -151,18 +151,6 @@ a:hover {
     width: 100vw;
     height: 100vh;
     margin: 0;
-  }
-  .day-col {
-    width: 25vw;
-  }
-  .icon-col {
-    width: 25vw;
-  }
-  .hi-col {
-    width: 25vw;
-  }
-}
-@media (min-width: 500px) {
-  html {
+    overflow: scroll;
   }
 }
