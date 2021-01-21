@@ -61,57 +61,57 @@ var dayFive=new Date(response.data.list[36].dt_txt);
 var forecastElement=document.querySelector("#forecast");
   forecastElement.innerHTML= 
   `<div class="row day-one">
-            <div class="col-3 day-col">
+            <div class="col-4 day-col">
                 ${days[dayOne.getDay()]}
             </div>
-            <div class="col-3 icon-col">
+            <div class="col-4 icon-col">
                 <img src="https://openweathermap.org/img/wn/${response.data.list[4].weather[0].icon}@2x.png">
             </div>
-            <div class="col-3 hi-col">
+            <div class="col-4 hi-col">
                 ${Math.round(response.data.list[4].main.temp)}°
             </div>
         </div>
         <div class="row day-two">
-            <div class="col-3 day-col">
+            <div class="col-4 day-col">
                     ${days[dayTwo.getDay()]}
             </div>
-            <div class="col-3 icon-col">
+            <div class="col-4 icon-col">
                     <img src="https://openweathermap.org/img/wn/${response.data.list[12].weather[0].icon}@2x.png">
             </div>
-            <div class="col-3 hi-col">
+            <div class="col-4 hi-col">
                     ${Math.round(response.data.list[12].main.temp)}°
              </div>
      </div>
     <div class="row day-three">
-        <div class="col-3 day-col">
+        <div class="col-4 day-col">
              ${days[dayThree.getDay()]}
           </div>
-        <div class="col-3 icon-col">
+        <div class="col-4 icon-col">
              <img src="https://openweathermap.org/img/wn/${response.data.list[20].weather[0].icon}@2x.png">
          </div>
-         <div class="col-3 hi-col">
+         <div class="col-4 hi-col">
               ${Math.round(response.data.list[20].main.temp)}° 
         </div>
     </div>
     <div class="row day-four">
-        <div class="col-3 day-col">
+        <div class="col-4 day-col">
             ${days[dayFour.getDay()]}
         </div>
-        <div class="col-3 icon-col">
+        <div class="col-4 icon-col">
             <img src="https://openweathermap.org/img/wn/${response.data.list[28].weather[0].icon}@2x.png">
         </div>
-        <div class="col-3 hi-col">
+        <div class="col-4 hi-col">
             ${Math.round(response.data.list[28].main.temp)}°
         </div>
     </div>
     <div class="row day-five">
-        <div class="col-3 day-col">
+        <div class="col-4 day-col">
             ${days[dayFive.getDay()]}
         </div>
-        <div class="col-3 icon-col">
+        <div class="col-4 icon-col">
             <img src="https://openweathermap.org/img/wn/${response.data.list[36].weather[0].icon}@2x.png">
         </div>
-        <div class="col-3 hi-col">
+        <div class="col-4 hi-col">
             ${Math.round(response.data.list[36].main.temp)}°
         </div>
     </div>
