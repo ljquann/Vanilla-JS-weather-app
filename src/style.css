@@ -151,3 +151,9 @@ a:hover {
   color: #39375b;
   transition: all 200ms ease-in-out;
 }
+@media only screen and (max-width: 400px) {
+  body {
+    width: 100%;
+    height: 100%;
+  }
+}
