@@ -147,7 +147,7 @@ a:hover {
   color: #39375b;
   transition: all 200ms ease-in-out;
 }
-@media all and (max-width: 500px) {
+@media screen and (max-width: 500px) {
   html {
     margin: 0;
   }
